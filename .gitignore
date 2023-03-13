@@ -1,23 +1,111 @@
-# Compiled class file
-*.class
+import java.util.Scanner;
+public class cashier {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int choose, quantity, price, price1, price2, price3, money;
+        System.out.println("ES Companies Portal - Cashier app 2");
+        System.out.println("===================================");
+        System.out.println("Keyboard = $50");
+        System.out.println("Mouse = $20");
+        System.out.println("Monitor = $100");
+        System.out.println("Exit ");
+        System.out.print("Choose: ");
+        choose = input.nextInt();
+        System.out.print("Input quantity [1...20]: ");
+        quantity = input.nextInt();
 
-# Log file
-*.log
+        price1= (50*quantity);
+        price2= (20*quantity);
+        price3= (100*quantity);
 
-# BlueJ files
-*.ctxt
+        if(quantity>20){
+            System.out.println("out of stocks!");
+            System.out.println("Thanks for using this application");
+            System.exit(0);
+        }
+        else
+            System.out.println("Your item is in stocks");
+        if(choose==1){
+            System.out.println("Total Price: " + price1 + "$");
+            System.out.println(" ");
+        }
+        else if(choose==2){
+            System.out.println("Total Price: " + price2 + "$");
+            System.out.println(" ");
+        }
+        else if(choose==3){
+            System.out.println("Total Price: " + price3 + "$");
+            System.out.println(" ");
+        }
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+        
+        System.out.println("ES Companies Portal - Cashier app 2");
+        System.out.println("===================================");
+        if(choose==1){
+            System.out.println("Item name: keyboard");
+            System.out.println("Price: $50");
+            System.out.println("Quantity: " + quantity);
+            System.out.println(" ");
+            System.out.println("Total: " + price1 + "$");
+            System.out.print("Input your money min(" + price1 + "$): ");
+            money = input.nextInt();
+                if(money<price1){
+                    System.out.println(" ");
+                    System.out.println("not enough money");
+                    System.out.println(" ");
+                    System.out.println("Thanks for using this application");
+                }
+                else{
+                    System.out.println(" ");
+                    System.out.println("Thank you for purchasing");
+                    System.out.println("Your change: " + (money - price1) + "$");
+                    System.out.println(" ");
+                    System.out.println("Thanks for using this application");
+                }
+            }
+        else if(choose==2){
+            System.out.println("Item name: mouse ");
+            System.out.println("Price: $20");
+            System.out.println("Quantity: " + quantity);
+            System.out.println(" ");
+            System.out.println("Total: " + price2 + "$");
+            System.out.print("Input your money min(" + price2 + "$): ");
+            money = input.nextInt();
+                if(money<price2){
+                    System.out.println(" ");
+                    System.out.println("not enough money");
+                    System.out.println(" ");
+                    System.out.println("Thanks for using this application");
+                }  
+                else{
+                    System.out.println(" ");
+                    System.out.println("Thank you for purchasing");
+                    System.out.println("Your change: " + (money - price2) + "$");
+                    System.out.println(" ");
+                    System.out.println("Thanks for using this application");
+                }
+        }
+        else if(choose==3){
+            System.out.println("Item name: monitor ");
+            System.out.println("Price: $100");
+            System.out.println("Quantity: " + quantity);
+            System.out.println(" ");
+            System.out.println("Total: " + price3 + "$");
+            System.out.print("Input your money min(" + price3 + "$): ");
+            money = input.nextInt();
+                if(money<price3){
+                    System.out.println(" ");
+                    System.out.println("not enough money");
+                    System.out.println(" ");
+                    System.out.println("Thanks for using this application");
+                }
+                else{
+                     System.out.println(" ");
+                    System.out.println("Thank you for purchasing");
+                    System.out.println("Your change: " + (money - price3) + "$");
+                    System.out.println(" ");
+                    System.out.println("Thanks for using this application");
+                }
+        }
+    }
+}
